@@ -89,3 +89,11 @@ body.addEventListener("wheel", event => {
   body.style.backgroundColor =
     colors[Math.floor(Math.random() * (colors.length - 1))];
 });
+
+//When using the scroll bar (without using your mouse wheel), it'll change all the anchor names to "Pwned"
+window.addEventListener("scroll", () => {
+  const phrase = ["Pwned"];
+  for (let i = 0; i < anchors.length; i++) {
+    anchors[i].textContent = phrase[i];
+  }
+});
