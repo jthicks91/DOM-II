@@ -90,10 +90,22 @@ body.addEventListener("wheel", event => {
     colors[Math.floor(Math.random() * (colors.length - 1))];
 });
 
-//When using the scroll bar (without using your mouse wheel), it'll change all the anchor names to "Pwned"
+//When using the scroll bar, it'll change all the anchor names to "Pwned"
 window.addEventListener("scroll", () => {
   const phrase = ["Pwned"];
   for (let i = 0; i < anchors.length; i++) {
     anchors[i].textContent = phrase[i];
   }
+});
+
+// using drag event that triggers when user tries to drag image and causes border radius of image to change;
+let funBusDrag = document.querySelector(".intro img");
+funBusDrag.addEventListener("contextmenu", e => {
+  funBus.style.display = "none";
+});
+funBusDrag.addEventListener("dragstart", e => {
+  funBusDrag.style.borderRadius = "200px";
+});
+funBusDrag.addEventListener("dragend", e => {
+  funBusDrag.style.borderRadius = "0";
 });
